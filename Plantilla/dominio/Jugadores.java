@@ -1,5 +1,6 @@
-<<<<<<< HEAD
+
 package dominio;
+
 
 public class Jugadores{
 
@@ -28,9 +29,9 @@ public class Jugadores{
 	        return posicion;
 	}
 
-        public setNacionalidad(String nacionalidad){
+        public void setNacionalidad(String nacionalidad){
 
-		this,nacionalidad = nacionalidad;
+		this.nacionalidad = nacionalidad;
 
 	}
 
@@ -66,9 +67,4 @@ public class Jugadores{
 		this.dorsal = dorsal;
 	}
         
-
-
-        
-=======
-
->>>>>>> 7427d79518836a2eebcb34aa257ce598c4a1ad55
+}
