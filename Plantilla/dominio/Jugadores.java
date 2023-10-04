@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 package dominio;
 
 public class Jugadores{
@@ -68,3 +69,6 @@ public class Jugadores{
 
 
         
+=======
+
+>>>>>>> 7427d79518836a2eebcb34aa257ce598c4a1ad55
