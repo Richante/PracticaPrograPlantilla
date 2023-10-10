@@ -1,71 +1,77 @@
 package dominio;
 
 import java.io.File;
-import java.ioFileWriter;
-import java.ioException;
-import java.util.Scanner;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Scanner;
 
-public class Plantilla{
+	public class Plantilla {
 
-	private String nombreFichero = "equipo.txt";
-	private ArrayList<Jugadores> jugadores = new ArrayList<>();
+		private String nombreFichero = "equipo.txt";
 
-        public Plantilla() {
+		private ArrayList<Jugadores> plantilla = new ArrayList<>();
 
-		try
+		public Plantilla(){
 
-		{
-			File fichero = new File(nombreFichero);
+			cargarJugadores();
 
-			fichero.createNewFile();
+		}
 
-			Scanner sc = new Scanner(fichero).useDelimiter(",|\n");
 
-			while(sc.hasNext()){
+		private void cargarJugadores() {
 
-				jugadores.add(new Jugador(sc.nextLine(), sc.nextLine(), sc.nextLine(), sc.nextInt());
+			try {
 
-			}catch(IOException ex)
+				File fichero = new File(nombreFichero);
 
-			{
-				System.out.println(ex);
+				fichero.createNewFile();
+
+				Scanner sc = new Scanner(fichero).useDelimiter(",|\n");
+
+				while (sc.hasNext()) {
+
+					Jugadores jugador = new Jugadores(sc.nextLine(), sc.nextLine(), sc.nextInt(), sc.nextLine());
+
+					plantilla.add(jugador);
+				}
+
+				sc.close();
+
+			} catch (IOException ex) {
+
+				System.err.println(ex);
 			}
 		}
 
-		public void annadirContacto(String nombre,String posicion,String nacionalidad,int dorsal){
-
-			Jugadores jugador = new Jugadores(nombre, posicion, nacionalidad, dorsal);
+		public void annadir(Jugadores jugador) {
 
 			plantilla.add(jugador);
 
-			this.volcarJugadores();
+			volcarPlantilla();
 		}
 
-		private void volcarJugadores(){
 
-			System.out.println(jugadores);
+		public void annadirJugador(String nombre, String posicion, int dorsal, String nacionalidad) {
 
-			try
-			{
+			Jugadores jugador = new Jugadores(nombre, posicion, dorsal, nacionalidad);
 
-				FileWriter fw = new FileWriter(nombreFichero);
+			plantilla.add(jugador);
 
-				for(Jugador jugador : jugadores){
+			this.volcarPlantilla();
 
-				fw.write(jugador.getNombre() + "," + jugador.getPosicion() + "," + jugador.getNacionalidad() + "," + jugador.getDorsal());                                        
-							fw.close();
-				}
-
-			}catch(IOException ex)
-
-				{
-					System.out.println(ex);
-				}
-			}
 		}
 
+		public ArrayList<Jugadores> getJugadoresPlantilla(){
+
+			return plantilla;
+
+		}
+
+
+		@Override
 		public String toString() {
+
 			StringBuilder sb = new StringBuilder();
 
 			for (Jugadores jugador : plantilla) {
@@ -76,5 +82,30 @@ public class Plantilla{
 			return sb.toString();
 		}
 
+
+		private void volcarPlantilla() {
+
+			System.out.println(plantilla);
+
+			try {
+				FileWriter fw = new FileWriter(nombreFichero);
+
+				for (Jugadores jugador : plantilla) {
+
+					fw.write(jugador.getNombre() + "," + jugador.getPosicion() + "," + jugador.getDorsal() + jugador.getNacionalidad() +"\n");
+				}
+
+				fw.close();
+
+			} catch (IOException ex) {
+
+				System.err.println(ex);
+
+			}
+
+		}
+
+
+	}
 
 
