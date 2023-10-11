@@ -28,9 +28,9 @@ public class Jugadores{
 	        return posicion;
 	}
 
-        public setNacionalidad(String nacionalidad){
+        public void setNacionalidad(String nacionalidad){
 
-		this,nacionalidad = nacionalidad;
+		this.nacionalidad = nacionalidad;
 
 	}
 
