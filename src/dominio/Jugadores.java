@@ -59,7 +59,7 @@ public class Jugadores{
 		       "Dorsal " + getDorsal() + " ";
 	}
 
-        public Jugadores(String nombre, String posicion, String nacionalidad, int dorsal){
+        public Jugadores(String nombre, String posicion, int dorsal, String nacionalidad){
 
 		this.nombre = nombre;
 		this.posicion = posicion;
