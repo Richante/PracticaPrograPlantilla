@@ -1,5 +1,9 @@
 #Instalación
-    Para instalar la aplicación, debe escribir en la consola el comando:
+ 
+Esta aplicacion esta diseñada para la administración de la plantilla de un equipo.
+
+
+ Para instalar la aplicación, debe escribir en la consola el comando:
         make jar
 
 
@@ -24,4 +28,5 @@
 #Estructura interna de la aplicacion
     Dirigirse al diagrama UML en el fichero "UML_PracticaPlantillas.png"
 
-    
+ 
+
