@@ -48,10 +48,8 @@ public Plantilla(){
 
 		volcarPlantilla();
 	}
-	
+
     
-
-
 	public ArrayList<Jugador> getPlantilla(){
 		return plantilla;
 
@@ -63,6 +61,7 @@ public Plantilla(){
 			FileWriter fw = new FileWriter("Plantilla_Actual.csv");
 			for(Jugador j : plantilla){
 				fw.write( 
+				j.GetId() + "," +
 				j.GetNombre() + "," + 
 				j.GetPosicion() + "," + 
 				j.GetNacionalidad() + "," + 
@@ -73,7 +72,6 @@ public Plantilla(){
 			System.err.println(ex);		
 		}
 	}
-
 
 	
 	public void cargarPlantilla(){
@@ -86,7 +84,7 @@ public Plantilla(){
 			sc.useDelimiter(",|\n");
 			
 			while(sc.hasNext()){
-				Jugador jugador = new Jugador(sc.next(),sc.next(),sc.next(),sc.nextInt() );
+				Jugador jugador = new Jugador(sc.nextInt(),sc.next(),sc.next(),sc.next(),sc.nextInt() );
 				plantilla.add(jugador);
 			
 			}

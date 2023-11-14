@@ -25,6 +25,8 @@ public static void ejecutar(String[] args){
 			
 			Scanner sc = new Scanner(System.in);
 				System.out.println(rojo + "RELLENA LA INFORMACIONES DEL NUEVO JUGADOR" + normal);
+				System.out.println(negrita + "ID: " + normal);
+					int id = sc.nextInt();
 				System.out.println(negrita + "NOMBRE: " + normal);
 					String nombre = sc.nextLine();
 				System.out.println(negrita + "Posicion: "+ normal);
@@ -36,7 +38,7 @@ public static void ejecutar(String[] args){
 
 			sc.close();
 				
-			Jugador jugador = new Jugador(nombre, posicion, pais, dorsal);
+			Jugador jugador = new Jugador(id, nombre, posicion, pais, dorsal);
 			fichajes.annadirJugador(jugador);
 
 		}else if(args[0].equalsIgnoreCase("eliminar")){
@@ -47,6 +49,40 @@ public static void ejecutar(String[] args){
 					String nombre = sc.nextLine();
 					fichajes.eliminarJugador(nombre);
 			sc.close();
+
+		}else if(args[0].equalsIgnoreCase("modificar")){
+
+			String nombre_antiguo = "" ;
+			Scanner sc = new Scanner(System.in);
+				System.out.println(negrita +"QUIEN QUIERES MODIFICAR DE LA PLANTILLA :"+ normal);
+					mostrarnombre(fichajes);
+				System.out.println("SELECTIONA UN ID: ");
+					int id = sc.nextInt();
+					
+					for (Jugador j : fichajes.getPlantilla()){
+						if (j.GetId() == id){
+							nombre_antiguo = j.GetNombre();
+						}
+					}
+
+					fichajes.eliminarJugador(nombre_antiguo);
+				
+				System.out.println(rojo + "RELLENA LOS NUEVOS VALORES DEL JUGADOR" + normal);
+	
+				System.out.println(negrita + "NOMBRE: " + normal);
+					String nombre = sc.nextLine();
+				System.out.println(negrita + "Posicion: "+ normal);
+					String posicion = sc.nextLine();
+				System.out.println(negrita + "Pais: "+ normal);
+					String pais = sc.nextLine();
+				System.out.println(negrita +"Dorsal: "+ normal);
+					int dorsal = sc.nextInt();
+	
+		sc.close();
+
+					Jugador jugador = new Jugador(id, nombre, posicion, pais, dorsal);
+					fichajes.annadirJugador(jugador);
+
 
 		}else if(args[0].equalsIgnoreCase("ayuda")){
 			ayuda();
@@ -64,7 +100,7 @@ public static void ejecutar(String[] args){
 			ArrayList<Jugador> plantilla = p.getPlantilla();
 			for (Jugador ju : plantilla){
 				System.out.print(rojo + n + ". "+ normal);
-				System.out.println(ju.GetNombre() + ", " + ju.GetPosicion() + ", " + ju.GetNacionalidad() + ", " + ju.GetDorsal());
+				System.out.println(ju.GetId() + " , " + ju.GetNombre() + ", " + ju.GetPosicion() + ", " + ju.GetNacionalidad() + ", " + ju.GetDorsal());
 				n++;
 			}
 	}
@@ -74,7 +110,7 @@ public static void ejecutar(String[] args){
 		ArrayList<Jugador> plantilla = p.getPlantilla();
 		for (Jugador j : plantilla){
 			System.out.print(rojo + n + ". " + normal);
-			System.out.println(j.GetNombre());
+			System.out.println(j.GetId() + " - " + j.GetNombre());
 			n++;
 		}
 

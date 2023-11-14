@@ -2,12 +2,16 @@ package dominio;
 
 public class Jugador{
 
+	private int id;
 	private String nombre;
 	private String nacionalidad;
 	private String posicion;
 	private int dorsal;
 
 	
+	public void SetId(int id){
+		this.id = id;
+	}
 	public void SetNombre(String nombre){
 		this.nombre = nombre;
 	}
@@ -22,7 +26,9 @@ public class Jugador{
 	}
 
 
-
+	public int GetId(){
+		return id;
+	}
 	public  String GetNombre(){
 		return nombre;
 	}
@@ -37,8 +43,9 @@ public class Jugador{
 	}
 
 
-	public Jugador(String nombre_, String nacionalidad_, String posicion_, int dorsal_){
+	public Jugador(int id_, String nombre_, String nacionalidad_, String posicion_, int dorsal_){
 
+		SetId(id_);
 		SetNombre(nombre_);
 		SetNacionalidad(nacionalidad_);
 		SetPosicion(posicion_);
@@ -47,7 +54,7 @@ public class Jugador{
 	}
 
 	public String toString(){	
-		return "Datos de l Jugador ::  " + nombre + " ; " + nacionalidad + " ; " + posicion + " ; " + dorsal;
+		return "Datos del Jugador ::  " + id + ";" + nombre + " ; " + nacionalidad + " ; " + posicion + " ; " + dorsal;
 	}
 
 

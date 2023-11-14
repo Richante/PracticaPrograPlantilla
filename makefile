@@ -23,6 +23,8 @@ eliminar: jar
 ayuda : jar
 	java -jar aplicacionPlantillas.jar ayuda
 
+modificar: jar
+	java -jar aplicacionPlantillas.jar modificar
 
 
 
