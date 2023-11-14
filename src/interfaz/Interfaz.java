@@ -128,13 +128,15 @@ public static void ejecutar(String[] args){
 
 		System.out.println(negrita+"FORMATO"+normal);
 		System.out.println("\tPara añadir un nuevo jugador, se escribe:\n");
-		System.out.println("\t\t" + negrita+ "make anadir // java -cp bin aplicacion.Principal anadir, y rellenar las informaciones que le piden" + normal +"\n");
+		System.out.println("\t\t" + negrita+ "java -cp bin aplicacion.Principal anadir, y rellenar las informaciones que le piden" + normal +"\n");
 		System.out.println("\tPara mostrar los jugadores de la plantillas, se teclea:\n");
-		System.out.println("\t\t" + negrita + "make mostrar // java -cp bin aplicacion.Principal mostrar" + normal + "\n");
+		System.out.println("\t\t" + negrita + "java -cp bin aplicacion.Principal mostrar" + normal + "\n");
 		System.out.println("\tPara mostrar esta ayuda, se escribe:\n");
-		System.out.println("\t\t" + negrita +"make ayuda // java -cp bin aplicacion.Principal ayuda" + normal + "\n");
+		System.out.println("\t\t" + negrita +"java -cp bin aplicacion.Principal ayuda" + normal + "\n");
 		System.out.println("\tPara eliminar un jugador de la plantilla, se escribe:\n");
-		System.out.println("\t\t" + negrita +"make eliminar // java -cp bin aplicacion.Principal eliminar" + normal + "\n");
+		System.out.println("\t\t" + negrita +"java -cp bin aplicacion.Principal eliminar" + normal + "\n");
+		System.out.println("\tPara modificar un jugador de la plantilla, se escribe:\n");
+		System.out.println("\t\t" + negrita +"java -cp bin aplicacion.Principal modificar" + normal + "\n");
 
 
 	}

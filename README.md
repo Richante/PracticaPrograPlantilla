@@ -11,16 +11,16 @@ Esta aplicacion esta diseñada para la administración de la plantilla de un equ
     Para ejecutar la aplicacion, desbes escribir lo siguiente en la consola:
         
         Para añadir un jugador:
-            "make anadir", y rellenar las informaciones del jugador
+            "java -jar aplicacionPlantillas.jar anadir ", y rellenar las informaciones del jugador
 
         Para eliminar un jugador:
-            "make eliminar", y rellenar el nombre exacto del jugador que quiere borrar de la plantilla  
+            "java -jar aplicacionPlantillas.jar eliminar ", y rellenar el nombre exacto del jugador que quiere borrar de la plantilla  
 
         Para mostrar la plantilla completa:
-            "make mostrar"
+            "java -jar aplicacionPlantillas.jar mostrar "
 
         Para solicitar las informaciones de ayuda:
-            "make ayuda"
+            "java -jar aplicacionPlantillas.jar ayuda "
 
 #Generacion del JavaDoc en HTML
     Escribir en consola el comando "make javadoc"

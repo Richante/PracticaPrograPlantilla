@@ -11,20 +11,5 @@ jar: compilar
 javadoc: compilar
 	find src -type f -name "*.java" | xargs javadoc -d html -encoding utf-8 -docencoding utf-8 -charset utf-8
 
-anadir: jar
-	java -jar aplicacionPlantillas.jar anadir
-
-mostrar: jar 
-	java -jar aplicacionPlantillas.jar mostrar
-
-eliminar: jar
-	java -jar aplicacionPLantillas.jar eliminar
-
-ayuda : jar
-	java -jar aplicacionPlantillas.jar ayuda
-
-modificar: jar
-	java -jar aplicacionPlantillas.jar modificar
-
 
 
