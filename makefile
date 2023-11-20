@@ -1,6 +1,7 @@
 limpiar:
 	rm -rf bin
 	rm -rf html
+	rm -rf aplicacionPlantillas.jar
 compilar: limpiar 
 	mkdir bin
 	find src -name "*.java" | xargs javac -cp bin -d bin

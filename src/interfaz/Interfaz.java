@@ -25,16 +25,29 @@ public static void ejecutar(String[] args){
 			
 			Scanner sc = new Scanner(System.in);
 				System.out.println(rojo + "RELLENA LA INFORMACIONES DEL NUEVO JUGADOR" + normal);
-				System.out.println(negrita + "ID: " + normal);
-					int id = sc.nextInt();
+				
 				System.out.println(negrita + "NOMBRE: " + normal);
 					String nombre = sc.nextLine();
+
 				System.out.println(negrita + "Posicion: "+ normal);
 					String posicion = sc.nextLine();
+
 				System.out.println(negrita + "Pais: "+ normal);
 					String pais = sc.nextLine();
+
 				System.out.println(negrita +"Dorsal: "+ normal);
 					int dorsal = sc.nextInt();
+
+				System.out.println(negrita + "ID: " + normal);
+					int id = sc.nextInt();
+
+					for (Jugador j : fichajes.getPlantilla()){
+						if (j.GetId() == id){
+							System.out.println("ID YA EXISTE");
+							System.exit(0);
+						}
+						
+					}
 
 			sc.close();
 				
@@ -51,41 +64,57 @@ public static void ejecutar(String[] args){
 			sc.close();
 
 		}else if(args[0].equalsIgnoreCase("modificar")){
-
-			String nombre_antiguo = "" ;
 			Scanner sc = new Scanner(System.in);
-				System.out.println(negrita +"QUIEN QUIERES MODIFICAR DE LA PLANTILLA :"+ normal);
-					mostrarnombre(fichajes);
-				System.out.println("SELECTIONA UN ID: ");
-					int id = sc.nextInt();
-					
-					for (Jugador j : fichajes.getPlantilla()){
-						if (j.GetId() == id){
-							nombre_antiguo = j.GetNombre();
-						}
-					}
 
-					fichajes.eliminarJugador(nombre_antiguo);
-				
+			System.out.println(negrita +"QUIEN QUIERES MODIFICAR DE LA PLANTILLA :"+ normal);
+			mostrarnombre(fichajes);
+			
+			System.out.println("SELECTIONA UN ID: ");
+			int id = sc.nextInt();
+		
+			boolean jugadorEncontrado = false;
+			String nombre_antiguo = "";
+		
+			for (Jugador j : fichajes.getPlantilla()) {
+				if (j.GetId() == id) {
+					jugadorEncontrado = true;
+					nombre_antiguo = j.GetNombre();
+					break;
+				}
+			}
+		
+			if (!jugadorEncontrado) {
+				System.out.println("No se encontró un jugador con el ID proporcionado.");
+			
+			} else {
+				fichajes.eliminarJugador(nombre_antiguo);
+		
+				Scanner sc2 = new Scanner(System.in);
 				System.out.println(rojo + "RELLENA LOS NUEVOS VALORES DEL JUGADOR" + normal);
-	
+		
 				System.out.println(negrita + "NOMBRE: " + normal);
-					String nombre = sc.nextLine();
+				String nuevoNombre = sc2.nextLine();
+		
 				System.out.println(negrita + "Posicion: "+ normal);
-					String posicion = sc.nextLine();
+				String posicion = sc2.nextLine();
+		
 				System.out.println(negrita + "Pais: "+ normal);
-					String pais = sc.nextLine();
+				String pais = sc2.nextLine();
+		
 				System.out.println(negrita +"Dorsal: "+ normal);
-					int dorsal = sc.nextInt();
-	
-		sc.close();
-
-					Jugador jugador = new Jugador(id, nombre, posicion, pais, dorsal);
-					fichajes.annadirJugador(jugador);
-
+				int dorsal = sc2.nextInt();
+		
+				Jugador jugadorModificado = new Jugador(id, nuevoNombre, posicion, pais, dorsal);
+				fichajes.annadirJugador(jugadorModificado);
+		
+				sc2.close();
+			}
+		
+			sc.close();
 
 		}else if(args[0].equalsIgnoreCase("ayuda")){
 			ayuda();
+			 
 		}else{
 			System.out.println("COMANDO INCORECTO" + "\n" + "escribir `ayuda` para acceder al menu de ayuda");
 		}
