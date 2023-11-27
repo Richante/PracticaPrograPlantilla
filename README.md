@@ -1,4 +1,4 @@
-#Instalación
+# Instalación
  
 Esta aplicacion esta diseñada para la administración de la plantilla de un equipo.
 
@@ -7,7 +7,7 @@ Esta aplicacion esta diseñada para la administración de la plantilla de un equ
         make jar
 
 
-#ejecución
+# ejecución
     Para ejecutar la aplicacion, desbes escribir lo siguiente en la consola:
         
         Para añadir un jugador:
@@ -22,10 +22,10 @@ Esta aplicacion esta diseñada para la administración de la plantilla de un equ
         Para solicitar las informaciones de ayuda:
             "java -jar aplicacionPlantillas.jar ayuda "
 
-#Generacion del JavaDoc en HTML
+# Generacion del JavaDoc en HTML
     Escribir en consola el comando "make javadoc"
 
-#Estructura interna de la aplicacion
+# Estructura interna de la aplicacion
     Dirigirse al diagrama UML en el fichero "UML_PracticaPlantillas.png"
 
  
